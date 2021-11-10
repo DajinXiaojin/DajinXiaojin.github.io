@@ -4,7 +4,7 @@
 <head>
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
-  <meta name="robots" content="none">
+  
 
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -17,14 +17,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
-  <title>Dajin</title>
+  <title>Spring Bean生命周期 - Dajin</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Dajin">
-<meta property="og:url" content="http://example.com/404.html">
+    <meta name="description" content="这里是文章的摘要。主要介绍springbean的生命周期。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spring Bean生命周期">
+<meta property="og:url" content="http://example.com/spring/life-cycle.html">
 <meta property="og:site_name" content="Dajin">
+<meta property="og:description" content="这里是文章的摘要。主要介绍springbean的生命周期。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-10T08:20:44.746Z">
+<meta property="article:modified_time" content="2021-11-10T08:20:44.730Z">
 <meta property="article:author" content="King">
 <meta name="twitter:card" content="summary">
   
@@ -49,7 +53,7 @@
 
 
   <div class='l_body' id='start'>
-    <aside class='l_left' layout='404'>
+    <aside class='l_left' layout='page'>
     
 
 
@@ -94,28 +98,53 @@
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
+  
+
+<header class="header mobile-only">
+
+<div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="头像" onerror="javascript:this.classList.add('error');this.src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main"><img no-lazy height="32px" src=""/ onerror="javascript:this.classList.add('error');this.src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></div></a></div>
+</header>
+
+
 
       
-<article class='md error-page'>
-  <h1><img id='error' src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/404/1c830bfcd517d.svg' alt='404'></h1>
-  <p class='what'>
-    <strong>
-      很抱歉，您访问的页面不存在
-    </strong>
-  </p>
-  <p class='why'>
-    可能是输入地址有误或该地址已被删除
-  </p>
-  <br><br>
-  <a class='button theme' id='back' href="/">返回主页</a>
-</article>
+
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Dajin</a><span class="sep"></span><a class="cap breadcrumb" href="/spring/life-cycle.html">Spring Bean生命周期</a></div></div>
+
+  <article class='content md page'>
+  <h1 class="article-title"><span>Spring Bean生命周期</span></h1>
+  
+    <p>这里是文章的摘要。主要介绍springbean的生命周期。</p>
+<span id="more"></span>
+
+<hr>
+<p>categories: [源码系列]<br>tags: [spring, bean]</p>
+<hr>
+<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+  
+  </article>
+
 
 
   <div class='related-wrap md reveal' id="comments">
     <div class='cmt-title cap theme'>
-      
+      快来参与讨论吧
     </div>
     <div class='cmt-body beaudar'>
       
