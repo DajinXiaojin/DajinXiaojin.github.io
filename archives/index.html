@@ -17,13 +17,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
-  <title>归档 - DajinXiaojin</title>
+  <title>归档 - Dajin</title>
 
   
     <meta property="og:type" content="website">
 <meta property="og:title" content="归档">
 <meta property="og:url" content="http://example.com/archives/index.html">
-<meta property="og:site_name" content="DajinXiaojin">
+<meta property="og:site_name" content="Dajin">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="King">
 <meta name="twitter:card" content="summary">
@@ -55,8 +55,8 @@
 
 <header class="header">
 
-<div class="logo-wrap"><a class="title" href="/"><div class="main">DajinXiaojin</div></a></div>
-<nav class="menu dis-select"></nav></header>
+<div class="logo-wrap"><a class="title" href="/"><div class="main">Dajin</div></a></div>
+<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/notes/">笔记</a><a class="nav-item" href="/more/">更多</a></nav></header>
 
 <div class="widgets"><div class='widget-wrap' id='markdown'>
   <div class='widget-header cap dis-select'>
@@ -100,7 +100,7 @@
 
 <header class="header mobile-only">
 
-<div class="logo-wrap"><a class="title" href="/"><div class="main">DajinXiaojin</div></a></div>
+<div class="logo-wrap"><a class="title" href="/"><div class="main">Dajin</div></a></div>
 </header>
 
 
@@ -300,6 +300,34 @@
 
 
 <!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
 
 
 
